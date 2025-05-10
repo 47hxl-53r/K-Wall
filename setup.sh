@@ -53,10 +53,10 @@ sudo systemctl enable kwall.service
 
 # Install backend and frontend dependencies silently
 echo -e "${BLUE}[*] Installing backend dependencies...${NC}"
-(cd "$TARGET_DIR/backend" && pip3 install -r requirements.txt --quiet --break-system-packages)
+(cd "$TARGET_DIR/backend" && sudo pip3 install -r requirements.txt --quiet --break-system-packages)
 
 echo -e "${BLUE}[*] Installing frontend dependencies...${NC}"
-(cd "$TARGET_DIR/frontend" && npm install --silent)
+(cd "$TARGET_DIR/frontend" && npm i --silent)
 
 echo -e "${GREEN}[+] Setup complete.${NC}"
 echo -e "${BLUE}[*] Starting K-Wall service . . .${NC}"
