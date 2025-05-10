@@ -5,15 +5,7 @@ RED="\033[0;31m"
 GREEN="\033[0;32m"
 YELLOW="\033[1;33m"
 BLUE="\033[0;34m"
-NC="\033[0m" # No Color
-
-echo -e "${BLUE}[*] Do you want this firewall to run on boot? [y/N]${NC}"
-read -r boot_choice
-
-if [[ ! "$boot_choice" =~ ^[Yy]$ ]]; then
-    echo -e "${RED}[!] Setup cancelled. This firewall will NOT work properly without systemd boot support.${NC}"
-    exit 1
-fi
+NC="\033[0m"
 
 echo -e "${BLUE}[*] Enter install path (default: /usr/local/share):${NC}"
 read -r install_path
@@ -69,5 +61,6 @@ echo -e "${BLUE}[*] Installing frontend dependencies...${NC}"
 echo -e "${GREEN}[+] Setup complete.${NC}"
 echo -e "${BLUE}[*] Starting K-Wall service . . .${NC}"
 sudo systemctl start kwall
-echo -e "${GREEN}[+] K-Wall initialised successfully."
+echo -e "${GREEN}[+] K-Wall initialised successfully.${NC}"
+echo -e "${GREEN}[+] K-Wall will be running on system boot from now on.${NC}"
 
