@@ -1,7 +1,0 @@
-fastapi==0.115.12
-pam==0.2.0
-pydantic==2.11.4
-python_pam==2.0.2
-pytz==2024.2
-SQLAlchemy==2.0.32
-uvicorn==0.34.2
