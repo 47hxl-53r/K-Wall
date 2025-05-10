@@ -23,6 +23,7 @@ sudo cp -r . "$TARGET_DIR" 2>/dev/null
 # Symlink
 echo -e "${BLUE}[*] Creating symlink in /usr/local/bin...${NC}"
 sudo ln -sf "$TARGET_DIR/kwall" /usr/local/bin/kwall
+(cd "$TARGET_DIR/backend" && sudo make install clean)
 
 # Create systemd service
 echo -e "${BLUE}[*] Creating systemd service...${NC}"
@@ -53,10 +54,9 @@ sudo systemctl enable kwall.service
 
 # Install backend and frontend dependencies silently
 echo -e "${BLUE}[*] Installing backend dependencies...${NC}"
-(cd "$TARGET_DIR/backend" && sudo pip3 install -r requirements.txt --break-system-packages)
-
+(cd "$TARGET_DIR/backend" && sudo pip3 install uvicorn SQLAlchemy fastapi pam pydantic python_pam --break-system-packages)
 echo -e "${BLUE}[*] Installing frontend dependencies...${NC}"
-(cd "$TARGET_DIR/frontend" && npm i --silent)
+(cd "$TARGET_DIR/frontend" && npm i)
 
 echo -e "${GREEN}[+] Setup complete.${NC}"
 echo -e "${BLUE}[*] Starting K-Wall service . . .${NC}"
