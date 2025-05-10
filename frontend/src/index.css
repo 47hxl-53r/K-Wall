@@ -1,0 +1,90 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Roboto+Mono:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 100% 61%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 195 92% 62%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 215.4 16.3% 70%;
+
+    --accent: 0 0% 18%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 336 80% 58%;
+    --destructive-foreground: 210 40% 98%;
+
+    --allow: 195 92% 62%;
+    --deny: 336 80% 58%;
+    --whitelist: 278 79% 38%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 217 100% 61%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+  }
+
+  .font-mono {
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  .font-display {
+    font-family: 'Rajdhani', sans-serif;
+  }
+}
+
+/* Custom styles */
+.log-row {
+  @apply border-b border-muted hover:bg-muted/50 transition-colors;
+}
+
+.log-allow {
+  @apply text-allow;
+}
+
+.log-deny {
+  @apply text-deny;
+}
+
+.log-whitelist {
+  @apply text-whitelist;
+}
+
+.protocol-icon {
+  @apply inline-block w-5 h-5 text-center align-middle;
+}
