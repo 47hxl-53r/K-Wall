@@ -1,6 +1,6 @@
 
 import { Layout } from "@/components/Layout";
-import { LogsManagement } from "@/components/logs/LogsManagement";
+// import { LogsManagement } from "@/components/logs/LogsManagement";
 
 export default function Logs() {
   return (
@@ -12,7 +12,6 @@ export default function Logs() {
             <p className="text-muted-foreground">View and filter firewall logs in real-time and from the database.</p>
           </div>
         </div>
-        <LogsManagement />
       </div>
     </Layout>
   );
