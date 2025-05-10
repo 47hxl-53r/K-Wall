@@ -53,7 +53,7 @@ sudo systemctl enable kwall.service
 
 # Install backend and frontend dependencies silently
 echo -e "${BLUE}[*] Installing backend dependencies...${NC}"
-(cd "$TARGET_DIR/backend" && sudo pip3 install -r requirements.txt --quiet --break-system-packages)
+(cd "$TARGET_DIR/backend" && sudo pip3 install -r requirements.txt --break-system-packages)
 
 echo -e "${BLUE}[*] Installing frontend dependencies...${NC}"
 (cd "$TARGET_DIR/frontend" && npm i --silent)
