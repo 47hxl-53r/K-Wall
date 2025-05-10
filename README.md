@@ -28,8 +28,8 @@
 ### 1. Clone and Install
 
 ```bash
-git clone https://github.com/your-username/kwall.git
-cd kwall
+git clone https://github.com/47hxl-53r/K-Wall.git
+cd K-Wall
 chmod +x setup.sh
 sudo ./setup.sh
 ```
