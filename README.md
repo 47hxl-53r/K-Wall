@@ -15,7 +15,7 @@
 ---
 
 ## 📦 Architecture
-![Archetecture](docs/image.png)
+![Archetecture](docs/archetecture.png)
 
 - Efficient communication between kernel and user space via Netlink sockets
 - Backend handles all logic, logging, rule CRUD, and DB operations
